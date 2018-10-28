@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>  <string name="str_txtloggerd_usuario">Nombre de usuario</string>
+    <string name="str_logged_txtcontraseña">Contraseña</string>
+    <string name="str_logged_btnlogin">LOGIN</string>
+</resources>
