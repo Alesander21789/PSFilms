@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaViewHolder>{
 
-    private ArrayList<Musica> data;
+    private ArrayList<Actor> data;
 
-    public MusicaAdapter(ArrayList<Musica> data) {
+    public MusicaAdapter(ArrayList<Actor> data) {
         this.data = data;
     }
 
@@ -24,10 +24,10 @@ public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaView
 
     @Override
     public void onBindViewHolder(MusicaViewHolder holder, int position) {
-        Musica musica = data.get(position);
-        holder.imgMusica.setImageResource(musica.getImagen());
-        holder.tvNombre.setText(musica.getNombre());
-        holder.tvArtista.setText(musica.getArtista());
+        Actor actor = data.get(position);
+        holder.imgMusica.setImageResource(actor.getImagen());
+        holder.tvNombre.setText(actor.getNombre());
+        holder.tvArtista.setText(actor.getArtista());
     }
 
     @Override

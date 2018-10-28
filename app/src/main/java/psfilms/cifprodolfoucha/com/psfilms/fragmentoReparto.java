@@ -52,14 +52,14 @@ public class fragmentoReparto extends Fragment {
         return view;
     }
 
-    private ArrayList<Musica> dataSet() {
-        ArrayList<Musica> data = new ArrayList<>();
-        data.add(new Musica("Tom Hardy", "Imagine Dragons", R.drawable.venon));
-        data.add(new Musica("Radioactive", "Imagine Dragons", R.drawable.venon));
-        data.add(new Musica("Radioactive", "Imagine Dragons", R.drawable.venon));
-        data.add(new Musica("Radioactive", "Imagine Dragons", R.drawable.venon));
-        data.add(new Musica("Radioactive", "Imagine Dragons", R.drawable.venon));
-        data.add(new Musica("Radioactive", "Imagine Dragons", R.drawable.venon));
+    private ArrayList<Actor> dataSet() {
+        ArrayList<Actor> data = new ArrayList<>();
+        data.add(new Actor("Tom Hardy", "Eddie Brock", R.drawable.venon));
+        data.add(new Actor("Michelle Williams", "Anne Weying", R.drawable.venon));
+        data.add(new Actor("Riz Ahmed", "Riot", R.drawable.venon));
+        data.add(new Actor("Scott Haze", "Roland Treece", R.drawable.venon));
+        data.add(new Actor("Reid Scott", "Dr. Dan Lewis", R.drawable.venon));
+        data.add(new Actor("Jenny Slate", "Dora Skirth", R.drawable.venon));
         return data;
     }
 

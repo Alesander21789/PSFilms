@@ -17,7 +17,7 @@ Context context;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+/*
         ConnectivityManager cm =
                 (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -27,7 +27,7 @@ Context context;
 
         if (isConnected) {
 
-
+*/
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -37,7 +37,7 @@ Context context;
                 }
             }, 4000);
 
-        }else {
+      /*  }else {
 
             Toast toast =
                     Toast.makeText(getApplicationContext(),
@@ -46,8 +46,8 @@ Context context;
             toast.setGravity(Gravity.CENTER|Gravity.LEFT,0,0);
 
             toast.show();
+*/
 
-
-        }
+        //}
     }
 }

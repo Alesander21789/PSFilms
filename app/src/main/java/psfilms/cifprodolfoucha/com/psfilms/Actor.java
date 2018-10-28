@@ -1,16 +1,16 @@
 package psfilms.cifprodolfoucha.com.psfilms;
 
-public class Musica {
+public class Actor {
 
     private String nombre;
     private String artista;
     private int imagen;
 
-    public Musica(){
+    public Actor(){
 
     }
 
-    public Musica(String nombre, String artista, int imagen) {
+    public Actor(String nombre, String artista, int imagen) {
         this.nombre = nombre;
         this.artista = artista;
         this.imagen = imagen;

@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".registro" />
+        <activity android:name=".LoggedActivity" />
         <activity
             android:name=".informacion"
             android:theme="@style/toolbar" />
