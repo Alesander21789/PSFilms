@@ -21,7 +21,7 @@ import android.widget.VideoView;
 public class fragmentoTrailer extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private   static String PACKAGE_NAME;
+   // private   static String PACKAGE_NAME;
     private Activity activity;
     public fragmentoTrailer() {
         // Required empty public constructor
@@ -37,8 +37,9 @@ public class fragmentoTrailer extends Fragment {
 
 
         VideoView videoView = view.findViewById(R.id.videoView);
-        PACKAGE_NAME = BuildConfig.APPLICATION_ID;
-        String videoPath = "android.resource://" + PACKAGE_NAME + "/" + R.raw.a;
+       // PACKAGE_NAME = BuildConfig.APPLICATION_ID;
+       // String videoPath = "android.resource://" + PACKAGE_NAME + "/" + R.raw.a;
+        String videoPath ="https://www.youtube.com/watch?v=mYTmQWZkw10";
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
