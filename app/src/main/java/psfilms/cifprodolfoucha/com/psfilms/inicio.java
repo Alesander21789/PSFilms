@@ -138,10 +138,34 @@ TableLayout table;
 
                 return true;
 
+
+
+            case R.id.inicio_imagen_login:
+
+
+                Intent intent2 = new Intent(this, LoggedActivity.class);
+                //EditText editText = (EditText) findViewById(R.id.editText);
+                //String message = editText.getText().toString();
+                // intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent2);
+
+                // Toast toast1 = Toast.makeText(getApplicationContext(), "Prueba ASF", Toast.LENGTH_SHORT);
+
+
+                // toast1.show();
+
+                return true;
+       
+
+
             default:
                 return super.onOptionsItemSelected(item);
 
         }
+
+
+
+
     }
 
 
