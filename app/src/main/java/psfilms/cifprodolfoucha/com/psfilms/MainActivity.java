@@ -27,7 +27,7 @@ Context context;
 
         if (isConnected) {
 
-a
+
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
