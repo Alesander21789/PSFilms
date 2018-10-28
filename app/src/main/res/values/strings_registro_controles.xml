@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_registro_textview">Registro</string>
+    <string name="str_registro_edittextnombre">Introduce un nombre</string>
+    <string name="str_registro_editextemail">Introduce un email</string>
+    <string name="str_registro_spinner">Introduce un email</string>
+    <string name="str_registro_checkbox">Marca si quieres recibir correos con novedades</string>
+    <string name="str_registro_boton">Enviar</string>
+    <string name="str_registro_textviewpass1">Introduce una pasword</string>
+    <string name="str_registro_textviewpass2">Vuelve a introducir la pasword</string>
+</resources>

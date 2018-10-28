@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentoResumen">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="El periodista Eddie Brock está investigando a Carlton Drake,\n
+         el célebre fundador de Life Foundation.\n
+          Brock establece una simbiosis con un ente alienígena que le ofrece superpoderes, \n
+          pero el ser se apodera de su personalidad y le vuelve perverso" />
+
+</FrameLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".informacion"
+    android:id="@+id/informacion">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="167dp"
+        app:srcCompat="@drawable/venon"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/hsv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true"
+        android:measureAllChildren="false"
+        android:scrollbars="none" >
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_informacion"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="350dp" />
+    </HorizontalScrollView>
+
+
+
+</android.widget.LinearLayout>

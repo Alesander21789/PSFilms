@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> <string-array name="array_registro_spinner">
+    <item>@string/str_registro_spinner_opc1</item>
+    <item>@string/str_registro_spinner_opc2</item>
+
+</string-array></resources>

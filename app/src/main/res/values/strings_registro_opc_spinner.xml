@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Other string resources also defined in this file… -->
+    <string name="str_registro_spinner_opc1">Hombre</string>
+    <string name="str_registro_spinner_opc2">Mujer</string>
+
+</resources>
