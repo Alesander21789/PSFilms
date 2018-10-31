@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="str_inicio_imagenregistrar">registrarse</string>
+    <string name="str_inicio_imagenlogin">login</string>
     <string name="str_inicio_imagenbuscar">buscar</string>
 </resources>
