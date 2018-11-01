@@ -43,7 +43,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
     private ComentariosAdapter adapter;
     private Button btnExpBottomSheet;
     private LinearLayout bottomSheet;
-    private Fragment fragmento;
+    private Fragment fragmento=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -280,6 +280,8 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                         case BottomSheetBehavior.STATE_HIDDEN:
                             break;
                         case BottomSheetBehavior.STATE_EXPANDED:
+                            if (fragmento==null) return;
+
                             FragmentManager fragmentmanager =getSupportFragmentManager();
                             //obtener una nueva transaccion
                             FragmentTransaction transaccion = fragmentmanager.beginTransaction();

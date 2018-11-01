@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import psfilms.cifprodolfoucha.com.psfilms.R;
 
@@ -18,7 +19,7 @@ import psfilms.cifprodolfoucha.com.psfilms.R;
  * to handle interaction events.
  */
 public class fragmentoResumen extends Fragment {
-
+TextView txt;
     private OnFragmentInteractionListener mListener;
 
     public fragmentoResumen() {
@@ -30,7 +31,15 @@ public class fragmentoResumen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento_resumen, container, false);
+
+
+
+
+        View view= inflater.inflate(R.layout.fragment_fragmento_resumen, container, false);
+
+        txt =(TextView)view.findViewById(R.id.txt_calificaion);
+        //txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.action_favorite, 0, 0, 0);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
