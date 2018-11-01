@@ -1,29 +1,37 @@
-package psfilms.cifprodolfoucha.com.psfilms;
+package psfilms.cifprodolfoucha.com.psfilms.fragments;
 
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.MediaController;
-import android.widget.VideoView;
+
+import java.util.ArrayList;
+
+import psfilms.cifprodolfoucha.com.psfilms.clases.Actor;
+import psfilms.cifprodolfoucha.com.psfilms.MusicaAdapter;
+import psfilms.cifprodolfoucha.com.psfilms.R;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link fragmentoTrailer.OnFragmentInteractionListener} interface
+ * {@link fragmentoReparto.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class fragmentoTrailer extends Fragment {
-
+public class fragmentoReparto extends Fragment {
+    private RecyclerView rvMusicas;
+    private GridLayoutManager glm;
+    private MusicaAdapter adapter;
     private OnFragmentInteractionListener mListener;
-   // private   static String PACKAGE_NAME;
     private Activity activity;
-    public fragmentoTrailer() {
+
+    public fragmentoReparto() {
         // Required empty public constructor
     }
 
@@ -36,23 +44,29 @@ public class fragmentoTrailer extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fragmento_reparto, container, false);
 
 
-        VideoView videoView = view.findViewById(R.id.videoView);
-       // PACKAGE_NAME = BuildConfig.APPLICATION_ID;
-       // String videoPath = "android.resource://" + PACKAGE_NAME + "/" + R.raw.a;
-        String videoPath ="https://www.youtube.com/watch?v=mYTmQWZkw10";
-        Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
+        rvMusicas = (RecyclerView) view.findViewById(R.id.recyclerReparto);
 
-        MediaController mediaController = new MediaController(activity);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
-
-
+        glm = new GridLayoutManager(activity, 2);
+        rvMusicas.setLayoutManager(glm);
+        adapter = new MusicaAdapter(dataSet());
+        rvMusicas.setAdapter(adapter);
 
 
 
         return view;
     }
+
+    private ArrayList<Actor> dataSet() {
+        ArrayList<Actor> data = new ArrayList<>();
+        data.add(new Actor("Tom Hardy", "Eddie Brock", R.drawable.venon));
+        data.add(new Actor("Michelle Williams", "Anne Weying", R.drawable.venon));
+        data.add(new Actor("Riz Ahmed", "Riot", R.drawable.venon));
+        data.add(new Actor("Scott Haze", "Roland Treece", R.drawable.venon));
+        data.add(new Actor("Reid Scott", "Dr. Dan Lewis", R.drawable.venon));
+        data.add(new Actor("Jenny Slate", "Dora Skirth", R.drawable.venon));
+        return data;
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

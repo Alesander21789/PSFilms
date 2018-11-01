@@ -1,4 +1,4 @@
-package psfilms.cifprodolfoucha.com.psfilms;
+package psfilms.cifprodolfoucha.com.psfilms.clases;
 
 public class Actor {
 

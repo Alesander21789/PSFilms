@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import psfilms.cifprodolfoucha.com.psfilms.clases.Actor;
+
 public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaViewHolder>{
 
     private ArrayList<Actor> data;

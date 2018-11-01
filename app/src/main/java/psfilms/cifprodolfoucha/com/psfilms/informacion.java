@@ -2,19 +2,48 @@ package psfilms.cifprodolfoucha.com.psfilms;
 
 
 
+import android.app.Activity;
 import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
+
+import psfilms.cifprodolfoucha.com.psfilms.clases.Comentario;
+import psfilms.cifprodolfoucha.com.psfilms.fragments.FragmentoOtras;
+import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoReparto;
+import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoResumen;
+import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoTrailer;
 
 
+public class informacion extends AppCompatActivity implements fragmentoResumen.OnFragmentInteractionListener, fragmentoReparto.OnFragmentInteractionListener ,fragmentoTrailer.OnFragmentInteractionListener,FragmentoOtras.OnFragmentInteractionListener, View.OnClickListener {
 
-public class informacion extends AppCompatActivity implements fragmentoResumen.OnFragmentInteractionListener, fragmentoReparto.OnFragmentInteractionListener ,fragmentoTrailer.OnFragmentInteractionListener,FragmentoOtras.OnFragmentInteractionListener{
+
+    ImageView  iv_trigger;
+    CoordinatorLayout layout;
+    private RecyclerView comentarios;
+    private GridLayoutManager glm;
+    private Activity activity;
+    private ComentariosAdapter adapter;
+    private Button btnExpBottomSheet;
+    private LinearLayout bottomSheet;
+    private Fragment fragmento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +53,18 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
         Toolbar toolbar =(Toolbar)findViewById(R.id.toolbar);
          setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+
+        layout=(CoordinatorLayout) findViewById(R.id.coordinator);
+
+
+        // Persistent BottomSheet
+        init_persistent_bottomsheet();
+        glm = new GridLayoutManager(activity, 1);
+        comentarios=(RecyclerView)findViewById(R.id.recyclerComentarios);
+        comentarios.setLayoutManager(glm);
+
+        adapter= new ComentariosAdapter(dataSet());
+        comentarios.setAdapter(adapter);
 
 
 
@@ -86,6 +127,20 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
 
 
 
+    private ArrayList<Comentario> dataSet() {
+        ArrayList<Comentario> data = new ArrayList<>();
+        data.add(new Comentario("Comentario 1", "Persona 1"));
+        data.add(new Comentario("Comentario 2", "Persona 2"));
+        data.add(new Comentario("Comentario 3", "Persona 3"));
+        data.add(new Comentario("Comentario 4", "Persona 4"));
+        data.add(new Comentario("Comentario 5", "Persona 5"));
+        data.add(new Comentario("Comentario 6", "Persona 6"));
+        return data;
+    }
+
+
+
+
 
 
 
@@ -110,6 +165,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                 FragmentTransaction transaccion = fragmentmanager.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
                 fragmentoResumen fragment = new fragmentoResumen();
+                fragmento=fragment;
                 transaccion.add(R.id.informacion,fragment);
                 transaccion.replace(R.id.informacion,fragment);
                 //confirmo la transaccion
@@ -127,6 +183,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                 FragmentTransaction transaccion2 = fragmentmanager2.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
                 fragmentoReparto fragment2 = new fragmentoReparto();
+                fragmento= fragment2;
                 transaccion2.add(R.id.informacion,fragment2);
                 //confirmo la transaccion
                 transaccion2.replace(R.id.informacion,fragment2);
@@ -146,6 +203,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                 FragmentTransaction transaccion3 = fragmentmanager3.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
                 fragmentoTrailer fragment3 = new fragmentoTrailer();
+                fragmento= fragment3;
                 transaccion3.add(R.id.informacion,fragment3);
                 //confirmo la transaccion
                 transaccion3.replace(R.id.informacion,fragment3);
@@ -164,6 +222,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                 FragmentTransaction transaccion4 = fragmentmanager4.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
                 FragmentoOtras fragment4 = new FragmentoOtras();
+                fragmento= fragment4;
                 transaccion4.add(R.id.informacion,fragment4);
                 //confirmo la transaccion
                 transaccion4.replace(R.id.informacion,fragment4);
@@ -185,4 +244,62 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
     public void onFragmentInteraction(Uri uri) {
 
     }
-}
+
+    @Override
+    public void onClick(View v) {
+
+
+
+
+    }
+
+
+    public void init_persistent_bottomsheet() {
+        View persistentbottomSheet = layout.findViewById(R.id.bottomsheet);
+        iv_trigger = (ImageView) persistentbottomSheet.findViewById(R.id.iv_fab);
+        final BottomSheetBehavior behavior = BottomSheetBehavior.from(persistentbottomSheet);
+
+
+        iv_trigger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else {
+                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+            }
+        });
+
+        if (behavior != null)
+            behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+                @Override
+                public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                    //showing the different states
+                    switch (newState) {
+                        case BottomSheetBehavior.STATE_HIDDEN:
+                            break;
+                        case BottomSheetBehavior.STATE_EXPANDED:
+                            FragmentManager fragmentmanager =getSupportFragmentManager();
+                            //obtener una nueva transaccion
+                            FragmentTransaction transaccion = fragmentmanager.beginTransaction();
+                            //crear un nuevo fragmento y añadirlo
+                            transaccion.remove(fragmento).commit();
+
+                            break;
+                        case BottomSheetBehavior.STATE_COLLAPSED:
+                            break;
+                        case BottomSheetBehavior.STATE_DRAGGING:
+                            break;
+                        case BottomSheetBehavior.STATE_SETTLING:
+                            break;
+                    }
+                }
+
+                @Override
+                public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                    // React to dragging events
+
+                }
+            });
+}}

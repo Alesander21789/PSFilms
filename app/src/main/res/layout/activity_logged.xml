@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,11 +13,15 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_height="69dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/str_logged_txt" />
 
     <EditText
@@ -24,42 +29,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
-        android:layout_alignEnd="@+id/psd"
-
-        android:layout_alignParentStart="true"
 
 
-        android:layout_marginTop="132dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/str_txtloggerd_usuario"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/psd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/usr"
+
         android:layout_alignParentStart="true"
-
         android:layout_alignParentEnd="true"
-
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/str_logged_txtcontraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/usr"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/usr"
+        app:layout_constraintTop_toBottomOf="@+id/usr" />
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/psd"
-        android:layout_alignEnd="@+id/psd"
 
         android:layout_alignParentStart="true"
-
-        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/holo_blue_dark"
         android:text="@string/str_logged_btnlogin"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/psd"
+        app:layout_constraintHorizontal_bias="0.647"
+        app:layout_constraintStart_toStartOf="@+id/psd"
+        app:layout_constraintTop_toBottomOf="@+id/psd"
+        app:layout_constraintVertical_bias="0.18" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
