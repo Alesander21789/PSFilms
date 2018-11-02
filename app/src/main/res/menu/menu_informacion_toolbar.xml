@@ -13,7 +13,11 @@
     <item android:title="TRAILERS"
         app:showAsAction="always"
         android:id="@+id/trailers"/>
-    <item android:title="OTRAS PELICULAS"
+    <item android:title="Peliculas o series del mismo género"
         app:showAsAction="always"
         android:id="@+id/otras"/>
+    <item android:title="Añadir comentarios"
+        app:showAsAction="always"
+        android:id="@+id/añadir_comentarios"/>
+
 </menu>

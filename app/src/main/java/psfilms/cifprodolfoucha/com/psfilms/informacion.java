@@ -3,10 +3,12 @@ package psfilms.cifprodolfoucha.com.psfilms;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,12 +29,13 @@ import java.util.ArrayList;
 
 import psfilms.cifprodolfoucha.com.psfilms.clases.Comentario;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.FragmentoOtras;
+import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentComentarios;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoReparto;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoResumen;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoTrailer;
 
 
-public class informacion extends AppCompatActivity implements fragmentoResumen.OnFragmentInteractionListener, fragmentoReparto.OnFragmentInteractionListener ,fragmentoTrailer.OnFragmentInteractionListener,FragmentoOtras.OnFragmentInteractionListener, View.OnClickListener {
+public class informacion extends AppCompatActivity implements fragmentoResumen.OnFragmentInteractionListener, fragmentoReparto.OnFragmentInteractionListener ,fragmentoTrailer.OnFragmentInteractionListener,FragmentoOtras.OnFragmentInteractionListener,fragmentComentarios.OnFragmentInteractionListener, View.OnClickListener {
 
 
     ImageView  iv_trigger;
@@ -197,31 +200,23 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
 
 
             case R.id.trailers:
-                //Obtener la instancia del administrador de fragmentos
-                FragmentManager fragmentmanager3 =getSupportFragmentManager();
-                //obtener una nueva transaccion
-                FragmentTransaction transaccion3 = fragmentmanager3.beginTransaction();
-                //crear un nuevo fragmento y añadirlo
-                fragmentoTrailer fragment3 = new fragmentoTrailer();
-                fragmento= fragment3;
-                transaccion3.add(R.id.informacion,fragment3);
-                //confirmo la transaccion
-                transaccion3.replace(R.id.informacion,fragment3);
-                transaccion3.addToBackStack(null);
-                transaccion3.commit();
 
-                // lo ultimo es que implemento
+                Intent intent = new Intent(this, reproductorVideo.class);
+                //EditText editText = (EditText) findViewById(R.id.editText);
+                //String message = editText.getText().toString();
+                // intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
 
                 return true;
 
 
-            case R.id.otras:
+            case R.id.añadir_comentarios:
                 //Obtener la instancia del administrador de fragmentos
                 FragmentManager fragmentmanager4 =getSupportFragmentManager();
                 //obtener una nueva transaccion
                 FragmentTransaction transaccion4 = fragmentmanager4.beginTransaction();
                 //crear un nuevo fragmento y añadirlo
-                FragmentoOtras fragment4 = new FragmentoOtras();
+                fragmentComentarios fragment4 = new fragmentComentarios();
                 fragmento= fragment4;
                 transaccion4.add(R.id.informacion,fragment4);
                 //confirmo la transaccion
@@ -232,6 +227,30 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
                 // lo ultimo es que implemento
 
                 return true;
+
+
+            case R.id.otras:
+                //Obtener la instancia del administrador de fragmentos
+                FragmentManager fragmentmanager5 =getSupportFragmentManager();
+                //obtener una nueva transaccion
+                FragmentTransaction transaccion5 = fragmentmanager5.beginTransaction();
+                //crear un nuevo fragmento y añadirlo
+                FragmentoOtras fragment5 = new FragmentoOtras();
+                fragmento= fragment5;
+                transaccion5.add(R.id.informacion,fragment5);
+                //confirmo la transaccion
+                transaccion5.replace(R.id.informacion,fragment5);
+                transaccion5.addToBackStack(null);
+                transaccion5.commit();
+
+                // lo ultimo es que implemento
+
+                return true;
+
+
+
+
+
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -247,6 +266,7 @@ public class informacion extends AppCompatActivity implements fragmentoResumen.O
 
     @Override
     public void onClick(View v) {
+
 
 
 

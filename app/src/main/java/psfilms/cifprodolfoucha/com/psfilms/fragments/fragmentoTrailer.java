@@ -10,7 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.MediaController;
 import android.widget.VideoView;
-
+import android.widget.Toast;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayer.ErrorReason;
+import com.google.android.youtube.player.YouTubePlayer.PlaybackEventListener;
+import com.google.android.youtube.player.YouTubePlayer.PlayerStateChangeListener;
+import com.google.android.youtube.player.YouTubePlayer.Provider;
+import com.google.android.youtube.player.YouTubePlayerView;
 import psfilms.cifprodolfoucha.com.psfilms.R;
 
 
@@ -20,7 +28,7 @@ import psfilms.cifprodolfoucha.com.psfilms.R;
  * {@link fragmentoTrailer.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class fragmentoTrailer extends Fragment {
+public class fragmentoTrailer extends Fragment  {
 
     private OnFragmentInteractionListener mListener;
    // private   static String PACKAGE_NAME;
@@ -36,7 +44,7 @@ public class fragmentoTrailer extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_fragmento_reparto, container, false);
-
+/*
 
         VideoView videoView = view.findViewById(R.id.videoView);
        // PACKAGE_NAME = BuildConfig.APPLICATION_ID;
@@ -50,7 +58,7 @@ public class fragmentoTrailer extends Fragment {
         mediaController.setAnchorView(videoView);
 
 
-
+*/
 
 
         return view;
