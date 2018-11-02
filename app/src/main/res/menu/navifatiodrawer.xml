@@ -23,9 +23,16 @@
 
     <item
         android:id="@+id/inicio_cargarxml"
-        android:icon="@drawable/ic_action_person"
         android:orderInCategory="100"
         android:title="Cargar xml"
+        app:showAsAction="never" />
+
+
+
+    <item
+        android:id="@+id/inicio_ajustes"
+        android:orderInCategory="100"
+        android:title="Ajustes"
         app:showAsAction="never" />
 
 </menu>

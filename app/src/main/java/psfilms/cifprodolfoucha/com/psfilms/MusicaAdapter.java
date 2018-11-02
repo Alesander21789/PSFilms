@@ -21,7 +21,7 @@ public class MusicaAdapter extends RecyclerView.Adapter<MusicaAdapter.MusicaView
 
     @Override
     public MusicaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MusicaViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.listalayout, parent, false));
+        return new MusicaViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_actores, parent, false));
     }
 
     @Override
