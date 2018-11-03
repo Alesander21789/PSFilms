@@ -35,7 +35,7 @@ TextView txt;
 
 
 
-        View view= inflater.inflate(R.layout.fragment_fragmento_resumen, container, false);
+        View view= inflater.inflate(R.layout.layout_fragmento_resumen_activity, container, false);
 
         txt =(TextView)view.findViewById(R.id.txt_calificaion);
         //txt.setCompoundDrawablesWithIntrinsicBounds(R.drawable.action_favorite, 0, 0, 0);

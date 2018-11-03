@@ -75,7 +75,7 @@ public class fragmentComentarios extends Fragment {
 
 
 
-       vista= inflater.inflate(R.layout.fragment_fragment_comentarios, container, false);
+       vista= inflater.inflate(R.layout.layout_fragment_comentarios_activity, container, false);
 
         Button boton= (Button)vista.findViewById(R.id.buttonValidate);
         boton.setOnClickListener(new View.OnClickListener() {

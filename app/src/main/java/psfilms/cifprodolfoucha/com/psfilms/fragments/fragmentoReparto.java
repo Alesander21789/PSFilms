@@ -41,7 +41,7 @@ public class fragmentoReparto extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_fragmento_reparto, container, false);
+        View view = inflater.inflate(R.layout.layout_fragmento_reparto_activity, container, false);
 
 
         rvMusicas = (RecyclerView) view.findViewById(R.id.recyclerReparto);
