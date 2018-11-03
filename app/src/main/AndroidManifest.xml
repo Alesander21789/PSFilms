@@ -20,17 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".inicio">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".Activity_Registro" />
         <activity android:name=".Activity_Login" />
         <activity
-            android:name=".informacion"
+            android:name=".Activity_Informacion"
             android:theme="@style/toolbar" />
         <activity android:name=".Activity_PantallaInicial">
             <intent-filter>
@@ -49,7 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".reproductorVideo" />
+        <activity android:name=".Activity_VerVideo" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

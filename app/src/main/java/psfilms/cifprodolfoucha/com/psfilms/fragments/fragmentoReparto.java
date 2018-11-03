@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import psfilms.cifprodolfoucha.com.psfilms.clases.Actor;
-import psfilms.cifprodolfoucha.com.psfilms.MusicaAdapter;
+import psfilms.cifprodolfoucha.com.psfilms.clasesAdaptadoras.MusicaAdapter;
 import psfilms.cifprodolfoucha.com.psfilms.R;
 
 
