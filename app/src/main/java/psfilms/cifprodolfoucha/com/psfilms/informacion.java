@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -28,6 +27,7 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import psfilms.cifprodolfoucha.com.psfilms.clases.Comentario;
+import psfilms.cifprodolfoucha.com.psfilms.clasesAdaptadoras.ComentariosAdapter;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.FragmentoOtras;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentComentarios;
 import psfilms.cifprodolfoucha.com.psfilms.fragments.fragmentoReparto;

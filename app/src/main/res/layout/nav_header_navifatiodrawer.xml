@@ -21,7 +21,7 @@
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/icono_dePrueba_2" />
+        app:srcCompat="@drawable/icono_de_prueba_2" />
 
     <TextView
         android:layout_width="match_parent"

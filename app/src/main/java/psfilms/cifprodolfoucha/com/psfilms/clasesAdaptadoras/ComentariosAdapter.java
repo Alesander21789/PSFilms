@@ -1,5 +1,7 @@
 package psfilms.cifprodolfoucha.com.psfilms.clasesAdaptadoras;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,10 +13,17 @@ import java.util.ArrayList;
 
 import psfilms.cifprodolfoucha.com.psfilms.R;
 import psfilms.cifprodolfoucha.com.psfilms.clases.Comentario;
+import psfilms.cifprodolfoucha.com.psfilms.dialogomodal;
 
-public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.ComentariosViewHolder>{
+public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.ComentariosViewHolder> {
     private ArrayList<Comentario> data;
 
+
+
+
+
+
+    final dialogomodal frag = new dialogomodal();
 
     public ComentariosAdapter(ArrayList<Comentario> data) {
         this.data = data;
@@ -23,6 +32,8 @@ public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.
     @NonNull
     @Override
     public ComentariosViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+
 
 
         return new ComentariosViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.comentarioslista, viewGroup,false));
@@ -37,6 +48,14 @@ Comentario comentario= data.get(i);
 
 holder.comentario.setText(comentario.getComentario());
 holder.nombre.setText(comentario.getPerosna());
+
+
+
+
+//Eventos
+holder.setOnLongClickListener();
+
+
     }
 
 
@@ -47,15 +66,21 @@ holder.nombre.setText(comentario.getPerosna());
     }
 
 
-    class ComentariosViewHolder extends RecyclerView.ViewHolder{
+
+
+    class ComentariosViewHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener{
+        final dialogomodal frag = new dialogomodal();
+       // final FragmentManager fragmentmanager =getSupportFragmentManager();
     TextView comentario;
     TextView nombre;
-
+        Context contexto=null;
+    private TextView text;
 
 
         public ComentariosViewHolder( View itemView) {
             super(itemView);
-
+          contexto=  itemView.getContext();
+            text=(TextView) itemView.findViewById(R.id.comentarios);
 
     comentario =(TextView)itemView.findViewById(R.id.comentarios);
     nombre = (TextView)itemView.findViewById(R.id.autor);
@@ -63,7 +88,40 @@ holder.nombre.setText(comentario.getPerosna());
 
 
         }
+void setOnLongClickListener() {
 
 
+
+            comentario.setOnLongClickListener(this);
+            nombre.setOnLongClickListener(this);
+}
+
+        @Override
+        public boolean onLongClick(View v) {
+
+
+            switch (v.getId()) {
+
+
+
+                case R.id.comentarios:
+
+                    Intent intent = new Intent(contexto,dialogomodal.class);
+                    contexto.startActivity(intent);
+
+
+                    break;
+
+                case R.id.autor:
+
+
+                    break;
+
+
+
+
+            }
+            return false;
+        }
     }
 }

@@ -27,12 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".registro" />
-        <activity android:name=".LoggedActivity" />
+        <activity android:name=".Activity_Registro" />
+        <activity android:name=".Activity_Login" />
         <activity
             android:name=".informacion"
             android:theme="@style/toolbar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity_PantallaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
