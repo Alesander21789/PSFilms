@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".navifatiodrawer"
+            android:name=".Activity_Inicio"
             android:label="@string/title_activity_navifatiodrawer"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
